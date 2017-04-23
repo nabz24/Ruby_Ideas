@@ -1,0 +1,48 @@
+<p>
+<br>
+<a href="/logout" >Logout </a>
+</p>
+<h1>Hi <%= @current_user.name %>!</h1>
+
+<hr>
+<div>
+<form action="/create_idea" method='post'>
+  <input type='hidden' name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <div class="form-group">
+
+  <textarea class="form-control" rows="5" id="comment" name = "idea[content]"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-default">Idea!</button>
+</form>
+</div>
+<hr>
+<div class='col-md-12'>
+
+
+<% @ideas.each do |idea| %>
+<br>
+<p><a href= "/users/<%= idea.user.id %>"><%= "#{idea.user.name}" %></a> says:</p>
+<p><%= "#{idea.content}" %></p>
+
+
+<% if @current_user.id == idea.user_id %>
+<a href= "/bright_idea/<%= idea.id %>" data-method="delete">Delete</a> |
+
+<% end %>
+<a href= "/bright_ideas/<%= idea.id %>" ><%= "#{idea.likes.count}" %> people liked this </a> |
+
+<% if @current_user.ideas_liked.include?(idea) %>
+<a href= "/unlike/<%= idea.id %>/likes"> unlike </a>
+
+<% else %>
+<a href= "/bright_idea/<%= idea.id %>/likes"> like </a>
+
+<% end %>
+<br>
+<% end %>
+
+</div>
+
+<hr>

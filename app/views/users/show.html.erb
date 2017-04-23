@@ -1,0 +1,12 @@
+<h3>Name:</h3> <%= @user.name %><br>
+<h3>Alias:</h3> <%= @user.alias %><br>
+<h3>Email:</h3> <%= @user.email %><br>
+
+<hr>
+
+<p>Total Number of Posts: <%= "#{@user.ideas.count}" %> </p>
+<p>Total Number of Likes: <%= "#{@user.ideas_liked.count}" %> </p>
+
+<hr>
+<a href= "/bright_idea/<%= @current_user.id %>"> Bright Idea </a> |
+<a href="/logout">Logout </a>
