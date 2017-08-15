@@ -1,4 +1,6 @@
-<div class='container'>
+
+<body>
+<div class='container background'>
 
 
   <div class='row'>
@@ -12,8 +14,8 @@
   <% end %>
 
     <div class='col-md-6'>
-      <h1>Register</h1>
-      <form action="/register" method="post">
+      <h1 class= "regf">Register</h1>
+      <form class = "reg_form" action="/register" method="post">
         <input type='hidden' name="authenticity_token" value="<%= form_authenticity_token %>">
         <div class="form-group">
           <label for="name">Name:</label>
@@ -48,7 +50,7 @@
     <% end %>
   <% end %>
 
-    <div class='col-md-6'>
+    <div class='col-md-6 yoo'>
       <h1>Log In</h1>
       <form action="/login" method='post'>
         <input type='hidden' name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -68,3 +70,5 @@
   </div>
 
 </div>
+
+</body>
