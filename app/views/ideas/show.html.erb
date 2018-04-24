@@ -1,8 +1,9 @@
-<body class = "ideas_page">
-<div class = "container">
+<div class="container">
 <div>
   <a href= "/bright_idea/<%= @user.id %>"> Bright Idea </a> |
   <a href="/logout">Logout </a>
+  <br>
+  </br>
 </div>
 <p><a href= "/users/<%= @user.id %>"><%= "#{@idea.user.name}" %></a> says:</p>
 <p><%= "#{@idea.content}" %></p>
@@ -10,18 +11,18 @@
 <div>
 <h5>People who liked this post</h5>
 
-<table class="table table-condensed">
+<table class="table table-striped">
     <thead>
     <tr>
       <th>Alias </th>
-      <th>Email </th>
+      <th>Name </th>
     </tr>
     </thead>
     <tbody>
     <% @idea.user_liked.uniq.each do |user|%>
         <tr>
-          <td><a href="/users/<%= user.id %>"><%= user.name %></a></td>
-          <td><%= user.email %></td>
+          <td><a href="/users/<%= user.id %>"><%= user.alias %></a></td>
+          <td><%= user.name %></td>
         </tr>
     <% end %>
     </tbody>
@@ -29,4 +30,3 @@
 
 </div>
 </div>
-</body>
