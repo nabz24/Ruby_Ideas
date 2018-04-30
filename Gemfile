@@ -46,14 +46,3 @@ group :development do
 end
 gem 'hirb'
 gem 'bcrypt', '~> 3.1.7' #version number might be different, use recommended version number
-
-
-gem 'figaro'
-gem 'puma'
-group :development do
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
-end
