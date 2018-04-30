@@ -7,7 +7,8 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-
+config.assets.compile = true
+config.assets.digest = true
 
 # role-based syntax
 # ==================
